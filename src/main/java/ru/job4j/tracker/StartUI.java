@@ -7,5 +7,8 @@ public class StartUI {
         Tracker tracker = new Tracker();
         tracker.add(new Item("Задача"));
         System.out.println(Arrays.toString(tracker.findByName("Задача")));
+
+        Item item = new Item(1, "Go to the park");
+        System.out.println(item);
     }
 }
