@@ -17,8 +17,13 @@ public class StartUI {
                 tracker.add(item);
             } else if (select == 1) {
                 Item[] items = tracker.findAll();
-                List<Item> list = List.of(items);
-                list.forEach(System.out::println);
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Заявок нет");
+                }
             } else if (select == 2) {
                 System.out.println("Entered ID item");
                 int id = scanner.nextInt();
@@ -52,8 +57,9 @@ public class StartUI {
                 String nameItem = scanner.nextLine();
                 Item[] items = tracker.findByName(nameItem);
                 if (items.length > 0) {
-                    List<Item> list = List.of(items);
-                    list.forEach(System.out::println);
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
                 } else {
                     System.out.println("Заявки с таким именем не найдены");
                 }
