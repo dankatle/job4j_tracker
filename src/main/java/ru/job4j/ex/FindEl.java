@@ -11,12 +11,24 @@ public class FindEl {
         return rsl;
     }
 
-    public static void main(String[] args) {
+    public static boolean sent(String value, String[] abuses) throws ElementAbuseException {
+        /* if contains throw ElementAbuseException */
+        for (String abus : abuses) {
+            if (!value.equals(abus)) {
+                throw new ElementAbuseException("Ключ не входит");
+            }
+        }
+        return true;
+    }
+
+    public static void process(String[] values, String key, String[] abuses) {
         try {
-            indexOf(new String[] {"Test", "test", "Top"},
-                    "test321");
+            if (indexOf(values, key) != -1) {
+                sent(key, abuses);
+            }
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
     }
+
 }
