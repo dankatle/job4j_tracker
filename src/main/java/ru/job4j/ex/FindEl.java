@@ -1,5 +1,7 @@
 package ru.job4j.ex;
 
+import java.util.Arrays;
+
 public class FindEl {
     public static int indexOf(String[] value, String key) throws ElementNotFoundException {
         int rsl = -1;
@@ -16,13 +18,16 @@ public class FindEl {
     }
 
     public static boolean sent(String value, String[] abuses) throws ElementAbuseException {
-        /* if contains throw ElementAbuseException */
+        boolean rsl = false;
         for (String abus : abuses) {
-            if (!value.equals(abus)) {
-                throw new ElementAbuseException("Ключ не входит");
+            if (value.equals(abus)) {
+                rsl = true;
             }
         }
-        return true;
+        if (rsl) {
+            throw new ElementAbuseException("Входит в запрещенные слова");
+        }
+        return rsl;
     }
 
     public static void process(String[] values, String key, String[] abuses) {
