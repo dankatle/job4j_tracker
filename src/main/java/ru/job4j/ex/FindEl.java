@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class FindEl {
     public static int indexOf(String[] value, String key) throws ElementNotFoundException {
         int rsl = -1;
-        int count = 0;
         for (int i = 0; i < value.length; i++) {
             if (key.equals(value[i])) {
                 rsl = i;
