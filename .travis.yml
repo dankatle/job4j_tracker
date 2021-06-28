@@ -18,3 +18,8 @@ notifications:
       - dan.kattsyn@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+
+env:
+  global:
+    - CODECOV_TOKEN='5fc87167-0c11-49e0-818a-99d2759cd94c'
+
