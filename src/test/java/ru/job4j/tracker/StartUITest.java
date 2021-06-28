@@ -14,7 +14,7 @@ public class StartUITest {
     public void whenCreateItem() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "Item name", "1"}
+                new String[]{"0", "Item name", "1"}
         );
         Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
@@ -33,7 +33,7 @@ public class StartUITest {
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(item.getId()), replacedName, "1"}
+                new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
         );
         List<UserAction> actions = new ArrayList<>();
         actions.add(new EditAction(out));
@@ -50,7 +50,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("Deleted item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(item.getId()), "1"}
+                new String[]{"0", String.valueOf(item.getId()), "1"}
         );
         List<UserAction> actions = new ArrayList<>();
         actions.add(new DeleteAction(out));
@@ -70,8 +70,8 @@ public class StartUITest {
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Exit" + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. Exit" + System.lineSeparator()
         ));
     }
 
@@ -150,7 +150,7 @@ public class StartUITest {
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"32", "0"}
+                new String[]{"32", "0"}
         );
         Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
