@@ -16,7 +16,6 @@ public class StrategyUsage {
         return check(str -> str.contains(key), s);
     }
 
-
     public boolean check(Predicate<String> pred, String s) {
         return pred.test(s);
     }
