@@ -9,7 +9,6 @@ public class Profiles {
     public List<Address> collect(List<Profile> profiles) {
         return profiles.stream()
                 .map(Profile::getAddress)
-                .filter(Objects::nonNull)
                 .sorted(Comparator.comparing(Address::getCity))
                 .distinct()
                 .collect(Collectors.toList());
