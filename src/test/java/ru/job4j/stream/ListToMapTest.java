@@ -21,12 +21,11 @@ public class ListToMapTest {
                 student3,
                 student4
         );
-        Map<Student, String> map = ListToMap.listToMap(students);
-        Map<Student, String> expected = Map.of(
-                student, student.getSurname(),
-                student2, student2.getSurname(),
-                student3, student3.getSurname(),
-                student4, student4.getSurname()
+        Map<String, Student> map = ListToMap.listToMap(students);
+        Map<String, Student> expected = Map.of(
+                student.getSurname(), student,
+                student2.getSurname(), student2,
+                student4.getSurname(), student4
         );
         assertThat(expected, is(map));
     }

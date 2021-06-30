@@ -5,11 +5,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ListToMap {
-    public static Map<Student, String> listToMap(List<Student> students) {
+    public static Map<String, Student> listToMap(List<Student> students) {
         return students.stream()
                 .collect(Collectors.toMap(
+                        Student::getSurname,
                         x -> x,
-                        Student::getSurname
+                        (x, b) -> x
                 ));
     }
 }
