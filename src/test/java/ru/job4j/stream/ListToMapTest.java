@@ -11,10 +11,10 @@ import static org.junit.Assert.*;
 public class ListToMapTest {
     @Test
     public void listToMap() {
-        Student student = new Student(4, "Иванова");
-        Student student2 = new Student(3, "Макарова");
-        Student student3 = new Student(2, "Макарова");
-        Student student4 = new Student(5, "Ильченко");
+        Student student = new Student("Иванова", 4);
+        Student student2 = new Student("Макарова", 3);
+        Student student3 = new Student("Макарова", 2);
+        Student student4 = new Student("Ильченко", 5);
         List<Student> students = List.of(
                 student,
                 student2,
