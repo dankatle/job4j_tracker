@@ -9,15 +9,17 @@ public class Hero {
     private int speed;
     private int armor;
 
-    public static void main(String[] args) {
-        Hero hero = new Builder().buildName("name")
-                .buildMark("mark")
-                .buildOrigin("origin")
-                .buildHeight(42.32F)
-                .buildWeight(1592.21F)
-                .buildSpeed(199)
-                .buildArmor(23)
-                .build();
+    @Override
+    public String toString() {
+        return "Hero{"
+                + "name='" + name + '\''
+                + ", mark='" + mark + '\''
+                + ", origin='" + origin + '\''
+                + ", height=" + height
+                + ", weight=" + weight
+                + ", speed=" + speed
+                + ", armor=" + armor
+                + '}';
     }
 
     static class Builder {
@@ -76,4 +78,17 @@ public class Hero {
             return hero;
         }
     }
+
+    public static void main(String[] args) {
+        Hero hero = new Builder().buildName("name")
+                .buildMark("mark")
+                .buildOrigin("origin")
+                .buildHeight(42.32F)
+                .buildWeight(1592.21F)
+                .buildSpeed(199)
+                .buildArmor(23)
+                .build();
+        System.out.println(hero);
+    }
+
 }
