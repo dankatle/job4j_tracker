@@ -1,5 +1,5 @@
 package ru.job4j.encapsulation;
-
+//kk
 public class Account {
     private int balance;
 
